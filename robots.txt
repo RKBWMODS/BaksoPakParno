@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
-Allow: /maps/embed
 Disallow: /private/
+Allow: /maps/embed
 Sitemap: https://parnobakso.vercel.app/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Disallow: /private/
+Allow: /maps/embed
