@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://parnobakso.vercel.app/</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
     <image:image>
-      <image:loc>https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752401484/nwqk5qyadj0p9nyatjah.jpg</image:loc>
-      <image:caption>Logo Bakso Pak Parno</image:caption>
+      <image:loc>https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto/v1752401484/nwqk5qyadj0p9nyatjah.jpg</image:loc>
+      <image:caption>Bakso Pak Parno dengan kuah gurih</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400947/bcgdzcbfzxbxy22mtetr.jpg</image:loc>
-      <image:caption>Bakso Jumbo Special</image:caption>
+      <image:loc>https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto/v1752400947/bcgdzcbfzxbxy22mtetr.jpg</image:loc>
+      <image:caption>Bakso Jumbo dengan telur ayam</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto/v1752400850/az1fdqtnwlnz1xy2dpf4.jpg</image:loc>
+      <image:caption>Bakso Krikil dengan kecambah segar</image:caption>
     </image:image>
   </url>
-
 </urlset>
