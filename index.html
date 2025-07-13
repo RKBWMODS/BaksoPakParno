@@ -1,1 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pak Parno</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --bg: #fff;
+      --text: #000;
+      --accent: #e63946; 
+      --footer-bg: #e63946; 
+      --footer-text: white;
+      --card-bg: #fff;
+      --border-color: #eaeaea;
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --accent: #ff6b6b; 
+      --footer-bg: #1a1a1a; 
+      --footer-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #333;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica', sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background-color: var(--bg);
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .navbar i {
+      font-size: 20px;
+      color: var(--accent);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .navbar-title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-left: 12px;
+      transition: color 0.3s ease;
+    }
+    .navbar-right {
+      margin-left: auto;
+      font-size: 18px;
+      color: var(--text);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .lokasi {
+      padding: 10px 16px;
+      background-color: var(--card-bg);
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .highlight {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background-color: var(--card-bg);
+      transition: all 0.3s ease;
+    }
+    .highlight img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+    .highlight .desc {
+      flex: 1;
+    }
+    .highlight .desc h3 {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      transition: color 0.3s ease;
+    }
+    .badge {
+      background-color: #ff7f00;
+      color: white;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 3px;
+      display: inline-block;
+    }
+    .rating-row {
+      display: flex;
+      justify-content: space-around;
+      font-size: 14px;
+      padding: 10px 0;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      margin: 10px 16px;
+      transition: color 0.3s ease;
+    }
+    .rating-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .rating-item .label {
+      font-size: 12px;
+      color: gray;
+      margin-bottom: 4px;
+    }
+    body.dark .rating-item .label {
+      color: #aaa;
+    }
+    .section-title {
+      padding: 0 14px;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+      transition: color 0.3s ease;
+    }
+    .menu-card {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--card-bg);
+      transition: all 0.3s ease;
+    }
+    .menu-info {
+      flex: 1;
+      padding-right: 10px;
+    }
+    .menu-info h4 {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      transition: color 0.3s ease;
+    }
+    .menu-info p {
+      font-size: 13px;
+      color: gray;
+      margin-bottom: 6px;
+      transition: color 0.3s ease;
+    }
+    body.dark .menu-info p {
+      color: #aaa;
+    }
+    .menu-info .price {
+      font-size: 14px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .menu-img-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .menu-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .btn-tambah {
+      margin-top: 8px;
+      padding: 6px 16px;
+      border: 1.5px solid #00aa5b;
+      color: #00aa5b;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: var(--card-bg);
+    }
+    body.dark .btn-tambah {
+      border-color: #00cc6a;
+      color: #00cc6a;
+    }
+    .menu-label {
+      background-color: var(--accent);
+      color: white;
+      font-size: 13px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-left: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 24px 16px;
+      line-height: 1.4;
+      transition: all 0.3s ease;
+    }
+    .footer h2 {
+      margin-bottom: 6px;
+      font-size: 16px;
+      text-align: left;
+    }
+    .footer p {
+      font-size: 12px;
+      text-align: left;
+    }
+    .toast {
+      position: absolute;
+      top: 55px;
+      right: 10px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      padding: 10px;
+      display: none;
+      z-index: 10;
+      width: 160px;
+      transition: all 0.3s ease;
+    }
+    .toast button {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+    .toast button:hover {
+      background: rgba(0,0,0,0.1);
+    }
+    body.dark .toast button:hover {
+      background: rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
 
+  <div class="navbar">
+    <i class="fas fa-utensils"></i>
+    <div class="navbar-title">Pak parno</div>
+    <div class="navbar-right">
+      <i class="fas fa-bars" onclick="toggleToast()"></i>
+    </div>
+
+    <div class="toast" id="toastMenu">
+      <button onclick="location.href='https://wa.me/6281387603153'">Hubungi Kami</button>
+      <button onclick="toggleDarkMode()">Mode Gelap</button>
+      <button onclick="location.href='mailto:dizflyze@gmail.com'">Report Bug</button>
+    </div>
+  </div>
+
+  <div class="lokasi" onclick="getLocation()">
+    <i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i> Lihat Jarak Lokasi
+  </div>
+
+  <div class="highlight">
+    <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752401484/nwqk5qyadj0p9nyatjah.jpg" />
+    <div class="desc">
+      <h3>Bakso Terlaris Karanganyar</h3>
+      <div class="badge">Paling Laris</div>
+      <div style="font-size: 12px; color: gray;">JL. Mirukun, Banjarharjo, Kebakkramat, Karanganyar, Jateng</div>
+    </div>
+  </div>
+
+  <div class="rating-row" id="infoRow">
+    <div class="rating-item">
+      <div class="label">Nilai Penjualan</div>
+      <div>⭐ 4.8</div>
+    </div>
+    <div class="rating-item" id="jarakView">
+      <div class="label">Berjarak Sekitar</div>
+      <div><i class="fas fa-map-marker-alt" style="color:var(--accent); margin-right: 4px;"></i></div>
+    </div>
+    <div class="rating-item" id="jamStatus">
+      <div class="label">Saat Ini</div>
+      <div><i class="fas fa-clock"></i></div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span class="menu-label"><i class="fas fa-map-pin"></i> Paling Banyak Disukai</span>
+  </div>
+  
+  <div class="menu-card">
+    <div class="menu-info">
+      <h4>Bakso Jumbo</h4>
+      <p>Porsi bakso jumbo + Telur ayam di dalamnya</p>
+      <div class="price">10.000</div>
+    </div>
+    <div class="menu-img-wrap">
+      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400947/bcgdzcbfzxbxy22mtetr.jpg" class="menu-img" />
+      <div class="btn-tambah" onclick="orderWhatsApp('Bakso Jumbo', '10.000')">Tambah</div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span class="menu-label"><i class="fas fa-concierge-bell"></i> Menu</span>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-info">
+      <h4>Bakso Krikil</h4>
+      <p>Porsi bakso Krikil + kecambah</p>
+      <div class="price">5.000</div>
+    </div>
+    <div class="menu-img-wrap">
+      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400850/az1fdqtnwlnz1xy2dpf4.jpg" class="menu-img" />
+      <div class="btn-tambah" onclick="orderWhatsApp('Bakso Krikil', '5.000')">Tambah</div>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-info">
+      <h4>Bakso Sedang</h4>
+      <p>Porsi bakso sedang + ukuran cukup besar</p>
+      <div class="price">7.000</div>
+    </div>
+    <div class="menu-img-wrap">
+      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400911/ppzysxovsgiadqowebzi.jpg" class="menu-img" />
+      <div class="btn-tambah" onclick="orderWhatsApp('Bakso Sedang', '7.000')">Tambah</div>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-info">
+      <h4>Bakso Jumbo</h4>
+      <p>Porsi jumbo yang banyak di minati</p>
+      <div class="price">10.000</div>
+    </div>
+    <div class="menu-img-wrap">
+      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400947/bcgdzcbfzxbxy22mtetr.jpg" class="menu-img" />
+      <div class="btn-tambah" onclick="orderWhatsApp('Bakso Jumbo', '10.000')">Tambah</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>Pak parno</h2>
+    <p>Manjakan lidahmu dengan makan yang sangat enak dan mengenyangkan dengan harga yang murah dengan bakso kami</p>
+    <p>ㅤ</p>
+    <h2>Pemesanan</h2>
+    <p>Menerima pesanan untuk daerah Kebakkramat dan sekitarnya dalam jumlah yang di tentukan.</p>
+    <p style="font-size: 12px; text-align: center; margin-top: 20px;">© baksokuenak | 2025</p>
+  </div>
+
+  <script>
+    let userLocation = null;
+    
+    function toggleToast() {
+      const toast = document.getElementById('toastMenu');
+      toast.style.display = toast.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      document.getElementById('toastMenu').style.display = 'none';
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('darkMode', isDark);
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark');
+      }
+    });
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(pos => {
+          const lat1 = pos.coords.latitude;
+          const lon1 = pos.coords.longitude;
+          userLocation = { latitude: lat1, longitude: lon1 };
+          
+          const lat2 = -7.5267286;
+          const lon2 = 110.9400621;
+          const R = 6371;
+          const dLat = (lat2 - lat1) * Math.PI / 180;
+          const dLon = (lon2 - lon1) * Math.PI / 180;
+          const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)**2;
+          const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+          const d = R * c;
+          document.getElementById("jarakView").innerHTML = `
+            <div class="label">Berjarak Sekitar</div>
+            <div><i class="fas fa-map-marker-alt" style="margin-right:4px;color:var(--accent);"></i> ${d.toFixed(2)} km</div>
+          `;
+        }, () => {
+          alert('Tidak di temukan');
+        });
+      } else {
+        alert("Tidak Suport Lokasi Ganti Ke Chrome!");
+      }
+    }
+
+    function cekJamOperasional() {
+      const jam = new Date().getHours();
+      const status = (jam >= 11 && jam < 20) ? 'Buka' : 'Tutup';
+      document.getElementById("jamStatus").innerHTML = `
+        <div class="label">Saat Ini</div>
+        <div><i class="fas fa-clock"></i> ${status}</div>
+      `;
+    }
+    
+    function orderWhatsApp(menuName, harga) {
+      const phoneNumber = '6281387603153';
+      let locationText = '';
+      
+      if (userLocation) {
+        locationText = `Lokasi saya di sini \nhttps://www.google.com/maps?q=${userLocation.latitude},${userLocation.longitude}`;
+      } else {
+        locationText = '';
+      }
+      
+      const message = `Halo Mas, saya mau pesan:
+      
+Bakso: ${menuName}
+Harga: Rp${harga}
+
+${locationText}
+
+Terima kasih.`;
+      
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    }
+    
+    cekJamOperasional();
+  </script>
+
+</body>
+</html>
