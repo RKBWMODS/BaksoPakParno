@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-
+Allow: /maps/embed
+Disallow: /private/
 Sitemap: https://parnobakso.vercel.app/sitemap.xml
