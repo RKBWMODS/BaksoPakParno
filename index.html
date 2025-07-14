@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bakso Viral - Pak Parno</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bakso Pak Parno - Bakso Terenak di Karanganyar</title>
+  <meta name="google-site-verification" content="ISeMbmEzTOPi_FoyR9HbUzYPmT5kMZN0vgEqx4Ir4xE" />
   <meta name="description" content="Bakso jumbo dan krikil paling enak di Karanganyar! Nikmati cita rasa khas Bakso Pak Parno dengan harga murah dan porsi melimpah.">
   <meta name="keywords" content="bakso karanganyar, bakso pak parno, bakso jumbo, bakso murah, bakso viral, bakso terenak">
   <meta property="og:title" content="Bakso Pak Parno - Terenak di Karanganyar">
@@ -12,10 +13,13 @@
   <meta property="og:url" content="https://parnobakso.vercel.app">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bakso Pak Parno - Terenak di Karanganyar">
+  <meta name="twitter:description" content="Bakso jumbo dan krikil terenak, porsi melimpah harga bersahabat.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto/v1752401484/nwqk5qyadj0p9nyatjah.jpg">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://parnobakso.vercel.app">
-  <link rel="icon" href="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto/v1752401484/nwqk5qyadj0p9nyatjah.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="canonical" href="https://parnobakso.vercel.app" />
+  <link rel="icon" href="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto/v1752401484/nwqk5qyadj0p9nyatjah.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <script type="application/ld+json">
 {
@@ -115,6 +119,7 @@
       --card-bg: #fff;
       --border-color: #eaeaea;
       --hover-color: #f8f8f8;
+      --max-content-width: 800px;
     }
     body.dark {
       --bg: #121212;
@@ -137,6 +142,13 @@
       color: var(--text);
       transition: all 0.3s ease;
     }
+    
+    .content-wrapper {
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      width: 100%;
+    }
+    
     .navbar {
       display: flex;
       align-items: center;
@@ -225,6 +237,7 @@
       padding: 16px;
       background-color: var(--card-bg);
       transition: all 0.3s ease;
+      margin: 0 16px;
     }
     .highlight img {
       width: 60px;
@@ -537,11 +550,11 @@
     }
     .dot {
       display: inline-block;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background-color: rgba(255, 255, 255, 0.5);
-      margin: 0 5px;
+      margin: 0 2px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
@@ -549,163 +562,257 @@
       background-color: white;
       transform: scale(1.2);
     }
+    
+    .pesan-button {
+      display: block;
+      margin: 20px auto;
+      background: #e63946;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      width: calc(100% - 32px);
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+    
+    .pesan-button:hover {
+      background: #c1121f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+    
+    .pesan-button:active {
+      transform: translateY(0);
+    }
+    
+    .pesan-button i {
+      margin-right: 8px;
+    }
+    
+    @media (min-width: 768px) {
+      .content-wrapper {
+        padding: 0 20px;
+        max-width: 800px;
+      }
+      
+      .highlight {
+        max-width: 100%;
+        margin: 16px 0;
+        border-radius: 10px;
+      }
+      
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      
+      .menu-card {
+        border-radius: 10px;
+        margin-bottom: 0;
+      }
+      
+      .gallery-container, 
+      .map-container {
+        height: 300px;
+        border-radius: 10px;
+      }
+      
+      .pesan-button {
+        max-width: 300px;
+        padding: 12px 30px;
+        font-size: 16px;
+      }
+      
+      .footer {
+        max-width: calc(85% - 85px);
+        border-radius: 10px 10px 0 0;
+        margin: 20px auto 0;
+      }
+      
+      .rating-row {
+        padding: 15px 20px;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="content-wrapper">
     <div class="navbar">
-    <i class="fas fa-utensils"></i>
-    <h1 class="navbar-title">Bakso Viral</h1>
-    <div class="navbar-right">
-      <div class="navbar-icons">
-        <div class="cart-icon" onclick="showCart()">
-          <i class="fas fa-shopping-cart"></i>
-          <div class="cart-count" id="cartCount">0</div>
+      <i class="fas fa-utensils"></i>
+      <h1 class="navbar-title">Bakso Viral</h1>
+      <div class="navbar-right">
+        <div class="navbar-icons">
+          <div class="cart-icon" onclick="showCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <div class="cart-count" id="cartCount">0</div>
+          </div>
+          <i class="fas fa-bars" onclick="toggleToast()"></i>
         </div>
-        <i class="fas fa-bars" onclick="toggleToast()"></i>
+      </div>
+
+      <div class="toast" id="toastMenu">
+        <button onclick="location.href='https://wa.me/6281387603153'"><i class="fas fa-phone-alt"></i>Hubungi Kami</button>
+        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i>Ganti Mode</button>
+        <button onclick="location.href='mailto:dizflyze@gmail.com'"><i class="fas fa-bug"></i>Laporkan Bug</button>
+      </div>
+    </div>
+    
+    <div class="highlight">
+      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752401484/nwqk5qyadj0p9nyatjah.jpg" loading="lazy" alt="Bakso Pak Parno dengan kuah gurih dan daging kenyal"/>
+      <div class="desc">
+        <h3>Bakso Pak Parno</h3>
+        <div class="badge">Paling Laris</div>
+        <div style="font-size: 12px; color: gray;">JL. Mirukun, Banjarharjo, Kebakkramat, Karanganyar, Jateng</div>
+      </div>
+    </div>
+    
+    <div class="gallery-container">
+      <div class="slides">
+        <div class="slide fade">
+          <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400947/bcgdzcbfzxbxy22mtetr.jpg" alt="Bakso Jumbo Viral">
+        </div>
+        <div class="slide fade">
+          <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400850/az1fdqtnwlnz1xy2dpf4.jpg" alt="Bakso Krikil Viral">
+        </div>
+        <div class="slide fade">
+          <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400911/ppzysxovsgiadqowebzi.jpg" alt="Bakso Sedang Viral">
+        </div>
+        <div class="slide fade">
+          <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752497956/wnjhcy0bxmv3lp6fywrh.jpg" alt="Mie Ayam Viral">
+        </div>
+      </div>
+      <div class="dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+    </div>
+    
+    <div class="jam-buka">
+      <i class="fas fa-clock"></i>
+      <div>
+        Buka : <span>11.00 - 20.00</span> | Setiap Hari
+      </div>
+    </div>
+    
+    <div class="rating-row" id="infoRow">
+      <div class="rating-item">
+        <div class="label">Nilai Penjualan</div>
+        <div><i class="fas fa-star" style="color: gold;"></i> 4.8</div>
+      </div>
+      <div class="rating-item" id="jarakView">
+        <div class="label">Berjarak Sekitar</div>
+        <div><i class="fas fa-map-marker-alt" style="color:var(--accent); margin-right: 4px;"></i> -</div>
+      </div>
+      <div class="rating-item" id="jamStatus">
+        <div class="label">Saat Ini</div>
+        <div><i class="fas fa-clock"></i> -</div>
+      </div>
+    </div>
+    
+    <button class="lokasi-button" onclick="getLocation()">
+      <i class="fas fa-location-dot"></i>
+      <span id="locationText">Klick Dan Ukur Jarak</span>
+      <div class="loading" id="locationLoading" style="display:none;"></div>
+    </button>
+    
+    <h2 class="section-title">
+      <span class="menu-label"><i class="fas fa-concierge-bell"></i> Menu</span>
+    </h2>
+    
+    <div class="menu-grid" id="menuGrid">
+      <div class="menu-card">
+        <div class="menu-info">
+          <h4>Bakso Jumbo > <span style="font-size: 10px; color: var(--accent);">★ Terlaris</span></h4>
+          <p>Porsi Bakso Jumbo + Telur ayam di dalamnya. Ukuran bakso 3x bakso biasa dengan tekstur kenyal dan gurih.</p>
+          <div class="price">10.000</div>
+        </div>
+        <div class="menu-img-wrap">
+          <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400947/bcgdzcbfzxbxy22mtetr.jpg" class="menu-img" loading="lazy" alt="Bakso Jumbo Viral"/>
+          <div class="btn-tambah" onclick="addToCart('Bakso Jumbo', 10000)">Tambah</div>
+        </div>
+      </div>
+      
+      <div class="menu-card">
+        <div class="menu-info">
+          <h4>Bakso Krikil</h4>
+          <p>Porsi Bakso Krikil + kecambah. Ukuran kecil cocok untuk ganjal perut dengan kuah yang gurih dan nikmat.</p>
+          <div class="price">5.000</div>
+        </div>
+        <div class="menu-img-wrap">
+          <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400850/az1fdqtnwlnz1xy2dpf4.jpg" class="menu-img" loading="lazy" alt="Bakso Krikil Viral"/>
+          <div class="btn-tambah" onclick="addToCart('Bakso Krikil', 5000)">Tambah</div>
+        </div>
+      </div>
+      
+      <div class="menu-card">
+        <div class="menu-info">
+          <h4>Bakso Sedang</h4>
+          <p>Porsi Bakso Sedang + ukuran cukup besar. Cocok untuk makan malam pas dingin dingin.</p>
+          <div class="price">7.000</div>
+        </div>
+        <div class="menu-img-wrap">
+          <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400911/ppzysxovsgiadqowebzi.jpg" class="menu-img" loading="lazy" alt="Bakso Sedang Viral"/>
+          <div class="btn-tambah" onclick="addToCart('Bakso Sedang', 7000)">Tambah</div>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-info">
+          <h4>Mie Ayam</h4>
+          <p>Porsi Mie Ayam dengan bumbu dan daging melimpah membuat lidah terus pengen ngunyah.</p>
+          <div class="price">7.000</div>
+        </div>
+        <div class="menu-img-wrap">
+          <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752497956/wnjhcy0bxmv3lp6fywrh.jpg" class="menu-img" loading="lazy" alt="Mie Ayam Viral"/>
+          <div class="btn-tambah" onclick="addToCart('Mie Ayam', 7000)">Tambah</div>
+        </div>
       </div>
     </div>
 
-    <div class="toast" id="toastMenu">
-      <button onclick="location.href='https://wa.me/6281387603153'"><i class="fas fa-phone-alt"></i>Hubungi Kami</button>
-      <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i>Ganti Mode</button>
-      <button onclick="location.href='mailto:dizflyze@gmail.com'"><i class="fas fa-bug"></i>Laporkan Bug</button>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.123456789012!2d110.9400621!3d-7.5267286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMzEnMzYuMiJTIDExMMKwNTYnMjQuMiJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen 
+        loading="lazy"
+        title="Lokasi Bakso Pak Parno"
+        aria-label="Peta Lokasi">
+      </iframe>
     </div>
+
+    <button class="pesan-button" onclick="showCart(true)">
+      <i class="fas fa-paper-plane"></i> Pesan Sekarang
+    </button>
   </div>
-  <div class="highlight">
-    <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752401484/nwqk5qyadj0p9nyatjah.jpg" loading="lazy" alt="Bakso Pak Parno dengan kuah gurih dan daging kenyal"/>
-    <div class="desc">
-      <h3>Bakso Pak Parno</h3>
-      <div class="badge">Paling Laris</div>
-      <div style="font-size: 12px; color: gray;">JL. Mirukun, Banjarharjo, Kebakkramat, Karanganyar, Jateng</div>
+  
+  <div class="footer">
+    <div class="content-wrapper">
+      <h2>Pak Parno</h2>
+      <p>Manjakan lidahmu dengan makanan yang sangat enak dan mengenyangkan dengan harga yang murah yaitu bakso kami</p>
+      
+      <h2 style="margin-top: 16px;">Pemesanan</h2>
+      <p>Menerima pesanan untuk daerah Kebakkramat dan sekitarnya dalam jumlah yang ditentukan.</p>
+      
+      <h2 style="margin-top: 16px;">Hubungi</h2>
+      <p>
+        <i class="fas fa-phone"></i> 0813-8760-3153<br>
+        <i class="fas fa-map-marker-alt"></i> JL. Mirukun, Banjarharjo, Kebakkramat
+      </p>
+      
+      <p style="font-size: 13px; text-align: center; margin-top: 20px;">© baksoviral | 2025</p>
     </div>
   </div>
   
-  <div class="gallery-container">
-    <div class="slides">
-      <div class="slide fade">
-        <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400947/bcgdzcbfzxbxy22mtetr.jpg" alt="Bakso Jumbo dengan telur ayam dan daging cincang">
-      </div>
-      <div class="slide fade">
-        <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400850/az1fdqtnwlnz1xy2dpf4.jpg" alt="Bakso Krikil dengan kuah bening dan kecambah">
-      </div>
-      <div class="slide fade">
-        <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400911/ppzysxovsgiadqowebzi.jpg" alt="Bakso Sedang dengan porsi cukup untuk makan malam">
-      </div>
-    </div>
-    <div class="dots">
-      <span class="dot active" data-index="0"></span>
-      <span class="dot" data-index="1"></span>
-      <span class="dot" data-index="2"></span>
-    </div>
-  </div>
-  <div class="jam-buka">
-    <i class="fas fa-clock"></i>
-    <div>
-      Buka : <span>11.00 - 20.00</span> | Setiap Hari
-    </div>
-  </div>
-  <div class="rating-row" id="infoRow">
-    <div class="rating-item">
-      <div class="label">Nilai Penjualan</div>
-      <div><i class="fas fa-star" style="color: gold;"></i> 4.8</div>
-    </div>
-    <div class="rating-item" id="jarakView">
-      <div class="label">Berjarak Sekitar</div>
-      <div><i class="fas fa-map-marker-alt" style="color:var(--accent); margin-right: 4px;"></i> -</div>
-    </div>
-    <div class="rating-item" id="jamStatus">
-      <div class="label">Saat Ini</div>
-      <div><i class="fas fa-clock"></i> -</div>
-    </div>
-  </div>
-  <button class="lokasi-button" onclick="getLocation()">
-    <i class="fas fa-location-dot"></i>
-    <span id="locationText">Klick Dan Ukur Jarak</span>
-    <div class="loading" id="locationLoading" style="display:none;"></div>
-  </button>
-  <div class="menu-card">
-    <div class="menu-info">
-      <h4>Bakso Jumbo > <span style="font-size: 10px; color: var(--accent);">★ Terlaris</span></h4>
-      <p>Porsi bakso jumbo + Telur ayam di dalamnya. Ukuran bakso 3x bakso biasa dengan tekstur kenyal dan gurih.</p>
-      <div class="price">10.000</div>
-    </div>
-    <div class="menu-img-wrap">
-      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400947/bcgdzcbfzxbxy22mtetr.jpg" class="menu-img" loading="lazy" alt="Bakso Jumbo dengan telur ayam"/>
-      <div class="btn-tambah" onclick="addToCart('Bakso Jumbo', 10000)">Tambah</div>
-    </div>
-  </div>
-  <h2 class="section-title">
-    <span class="menu-label"><i class="fas fa-concierge-bell"></i> Menu</span>
-  </h2>
-  <div class="menu-card">
-    <div class="menu-info">
-      <h4>Bakso Krikil</h4>
-      <p>Porsi bakso Krikil + kecambah. Ukuran kecil cocok untuk ganjal perut dengan kuah yang gurih dan nikmat.</p>
-      <div class="price">5.000</div>
-    </div>
-    <div class="menu-img-wrap">
-      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400850/az1fdqtnwlnz1xy2dpf4.jpg" class="menu-img" loading="lazy" alt="Bakso Krikil dengan kecambah segar"/>
-      <div class="btn-tambah" onclick="addToCart('Bakso Krikil', 5000)">Tambah</div>
-    </div>
-  </div>
-  <div class="menu-card">
-    <div class="menu-info">
-      <h4>Bakso Sedang</h4>
-      <p>Porsi bakso sedang + ukuran cukup besar. Cocok untuk makan malam pas dingin dingin.</p>
-      <div class="price">7.000</div>
-    </div>
-    <div class="menu-img-wrap">
-      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400911/ppzysxovsgiadqowebzi.jpg" class="menu-img" loading="lazy" alt="Bakso Sedang dengan porsi pas"/>
-      <div class="btn-tambah" onclick="addToCart('Bakso Sedang', 7000)">Tambah</div>
-    </div>
-  </div>
-
-  <div class="menu-card">
-    <div class="menu-info">
-      <h4>Bakso Jumbo Special</h4>
-      <p>Porsi jumbo yang banyak diminati dengan tambahan daging cincang dan telur puyuh di dalamnya.</p>
-      <div class="price">10.000</div>
-    </div>
-    <div class="menu-img-wrap">
-      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752400947/bcgdzcbfzxbxy22mtetr.jpg" class="menu-img" loading="lazy" alt="Bakso Jumbo Special dengan daging cincang"/>
-      <div class="btn-tambah" onclick="addToCart('Bakso Jumbo', 10000)">Tambah</div>
-    </div>
-  </div>
-
-  <div class="map-container">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.123456789012!2d110.9400621!3d-7.5267286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMzEnMzYuMiJTIDExMMKwNTYnMjQuMiJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" 
-    width="100%" 
-    height="100%" 
-    style="border:0;" 
-    allowfullscreen 
-    loading="lazy"
-    title="Lokasi Bakso Pak Parno"
-    aria-label="Peta Lokasi">
-  </iframe>
-</div>
-
-  <div style="text-align: center; margin-top: 5px; ">
-      <button onclick="showCart(true)" style="background: red; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">
-        <i class="fas fa-paper-plane"></i> Pesan Sekarang
-      </button>
-    </div>
-<br>
-  <div class="footer">
-    <h2>Pak Parno</h2>
-    <p>Manjakan lidahmu dengan makanan yang sangat enak dan mengenyangkan dengan harga yang murah yaitu bakso kami</p>
-    
-    <h2 style="margin-top: 16px;">Pemesanan</h2>
-    <p>Menerima pesanan untuk daerah Kebakkramat dan sekitarnya dalam jumlah yang ditentukan.</p>
-    
-    <h2 style="margin-top: 16px;">Hubungi</h2>
-    <p>
-      <i class="fas fa-phone"></i> 0813-8760-3153<br>
-      <i class="fas fa-map-marker-alt"></i> JL. Mirukun, Banjarharjo, Kebakkramat
-    </p>
-    
-    <p style="font-size: 13px; text-align: center; margin-top: 20px;">© baksoviral | 2025</p>
-  </div>
   <div id="cartModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: var(--card-bg); width: 90%; max-width: 400px; border-radius: 10px; padding: 16px; max-height: 80vh; overflow-y: auto;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
