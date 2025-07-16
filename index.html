@@ -1003,6 +1003,80 @@
       font-size: 14px;
     }
     
+    /* Modal Informasi */
+    .info-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .info-modal-content {
+      background: var(--card-bg);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      position: relative;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .info-modal-content .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--text);
+    }
+    
+    .info-modal-content img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      margin: 0 auto 15px;
+      display: block;
+      object-fit: cover;
+    }
+    
+    .info-modal-content h3 {
+      margin-bottom: 10px;
+      font-size: 12px;
+      /*display: flex;*/
+    }
+    
+    .info-modal-content p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+      font-size: 12px;
+    }
+    
+    .tech-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .tech-icons i {
+      font-size: 40px;
+    }
+    
+    .fa-html5 { color: #e34f26; }
+    .fa-css3-alt { color: #2965f1; }
+    .fa-js { color: #f7df1e; }
+    .fa-database { color: #ffca28; }
+    
     @media (min-width: 768px) {
       .content-wrapper {
         padding: 0 20px;
@@ -1082,8 +1156,9 @@
       <div class="toast" id="toastMenu">
         <button onclick="location.href='https://wa.me/6281387603153'"><i class="fas fa-phone-alt"></i>Hubungi Kami</button>
         <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i>Ganti Mode</button>
-        <button onclick="location.href='mailto:dizflyze@gmail.com'"><i class="fas fa-bug"></i>Laporkan Bug</button>
         <button onclick="showReviewModal()"><i class="fas fa-star"></i>Tulis Ulasan</button>
+        <button onclick="location.href='mailto:dizflyze@gmail.com'"><i class="fas fa-bug"></i>Laporkan Bug</button>
+        <button onclick="showInfoModal()"><i class="fas fa-info-circle"></i>Informasi</button>
       </div>
     </div>
     
@@ -1223,7 +1298,7 @@
         <h3 class="reviews-title">Ulasan Terbaru</h3>
         <div class="average-rating">
           <i class="fas fa-star" style="color: gold;"></i>
-          <span id="averageRating">4.8</span>
+          <span id="averageRating">4.9</span>
         </div>
       </div>
       <div class="review-list" id="reviewList">
@@ -1328,6 +1403,28 @@
     </div>
   </div>
   
+  <!-- Modal Informasi -->
+  <div class="info-modal" id="infoModal">
+    <div class="info-modal-content">
+      <button class="close-btn" onclick="closeInfoModal()">&times;</button>
+      <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752401484/nwqk5qyadj0p9nyatjah.jpg" alt="Logo Bakso Pak Parno">
+      <h2 class="section-title">
+      <span class="menu-label">Tujuan Kami</span>
+    </h2>
+      <h3>Website ini di tujukan sebagai pemermudah global untuk mengenal kami di media sosial, Kami hanya menggunakan website ini hanya untuk mengenalkan diri bukan untuk penjualan online seperti gofood dan sebagainya.</h3>
+      <h2 class="section-title">
+      <span class="menu-label">Create By</span>
+    </h2>
+      <div class="tech-icons">
+        <i class="fab fa-html5"></i>
+        <i class="fab fa-css3-alt"></i>
+        <i class="fab fa-js"></i>
+        <i class="fas fa-database"></i>
+      </div>
+      <p style="font-size: 12px; color: #777;">© baksoviral | 2025</p>
+    </div>
+  </div>
+  
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
   
@@ -1381,6 +1478,15 @@
     
     function closeReviewModal() {
       document.getElementById('reviewModal').style.display = 'none';
+    }
+    
+    function showInfoModal() {
+      document.getElementById('infoModal').style.display = 'flex';
+      document.getElementById('toastMenu').style.display = 'none';
+    }
+    
+    function closeInfoModal() {
+      document.getElementById('infoModal').style.display = 'none';
     }
     
     function updateStars() {
@@ -1512,7 +1618,7 @@
     
     function showToast(message) {
       const toast = document.createElement('div');
-      toast.style.position = 'fixed';
+      toast.styleosition = 'fixed';
       toast.style.bottom = '20px';
       toast.style.left = '50%';
       toast.style.transform = 'translateX(-50%)';
