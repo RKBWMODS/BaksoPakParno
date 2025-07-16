@@ -834,7 +834,7 @@
       background: var(--card-bg);
       width: 90%;
       max-width: 400px;
-      border-radius: 12px;
+      border-radius: 10px;
       padding: 20px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
@@ -1052,7 +1052,6 @@
     .info-modal-content h3 {
       margin-bottom: 10px;
       font-size: 12px;
-      /*display: flex;*/
     }
     
     .info-modal-content p {
@@ -1152,16 +1151,13 @@
           <i class="fas fa-bars" onclick="toggleToast()"></i>
         </div>
       </div>
-
       <div class="toast" id="toastMenu">
         <button onclick="location.href='https://wa.me/6281387603153'"><i class="fas fa-phone-alt"></i>Hubungi Kami</button>
         <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i>Ganti Mode</button>
-        <button onclick="showReviewModal()"><i class="fas fa-star"></i>Tulis Ulasan</button>
         <button onclick="location.href='mailto:dizflyze@gmail.com'"><i class="fas fa-bug"></i>Laporkan Bug</button>
         <button onclick="showInfoModal()"><i class="fas fa-info-circle"></i>Informasi</button>
       </div>
     </div>
-    
     <div class="highlight">
       <img src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752401484/nwqk5qyadj0p9nyatjah.jpg" loading="lazy" alt="Bakso Pak Parno dengan kuah gurih dan daging kenyal"/>
       <div class="desc">
@@ -1170,7 +1166,6 @@
         <div style="font-size: 12px; color: gray;">JL. Mirukun, Banjarharjo, Kebakkramat, Karanganyar, Jateng</div>
       </div>
     </div>
-    
     <div class="gallery-container">
       <div class="slides">
         <div class="slide fade">
@@ -1193,14 +1188,12 @@
         <span class="dot" data-index="3"></span>
       </div>
     </div>
-    
     <div class="jam-buka">
       <i class="fas fa-clock"></i>
       <div>
         Buka : <span>11.00 - 20.00</span> | Setiap Hari
       </div>
     </div>
-    
     <div class="rating-row" id="infoRow">
       <div class="rating-item">
         <div class="label">Rata-Rata</div>
@@ -1215,17 +1208,14 @@
         <div><i class="fas fa-clock"></i> -</div>
       </div>
     </div>
-    
     <button class="lokasi-button" onclick="getLocation()">
       <i class="fas fa-location-dot"></i>
       <span id="locationText">Klick Dan Ukur Jarak</span>
       <div class="loading" id="locationLoading" style="display:none;"></div>
     </button>
-    
     <h2 class="section-title">
       <span class="menu-label"><i class="fas fa-concierge-bell"></i> Menu</span>
     </h2>
-    
     <div class="menu-grid" id="menuGrid">
       <div class="menu-card">
         <div class="menu-info">
@@ -1238,7 +1228,6 @@
           <div class="btn-tambah" onclick="addToCart('Bakso Jumbo', 10000)">Tambah</div>
         </div>
       </div>
-      
       <div class="menu-card">
         <div class="menu-info">
           <h4>Bakso Krikil</h4>
@@ -1250,7 +1239,6 @@
           <div class="btn-tambah" onclick="addToCart('Bakso Krikil', 5000)">Tambah</div>
         </div>
       </div>
-      
       <div class="menu-card">
         <div class="menu-info">
           <h4>Bakso Sedang</h4>
@@ -1262,7 +1250,6 @@
           <div class="btn-tambah" onclick="addToCart('Bakso Sedang', 7000)">Tambah</div>
         </div>
       </div>
-
       <div class="menu-card">
         <div class="menu-info">
           <h4>Mie Ayam</h4>
@@ -1275,7 +1262,6 @@
         </div>
       </div>
     </div>
-
     <div class="map-container">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.123456789012!2d110.9400621!3d-7.5267286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMzEnMzYuMiJTIDExMMkwNTYnMjQuMiJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" 
@@ -1288,11 +1274,9 @@
         aria-label="Peta Lokasi">
       </iframe>
     </div>
-
     <button class="pesan-button" onclick="showCart(true)">
       <i class="fas fa-paper-plane"></i> Pesan Sekarang
     </button>
-    
     <div class="reviews-section" id="reviewsSection">
       <div class="reviews-header">
         <h3 class="reviews-title">Ulasan Terbaru</h3>
@@ -1304,12 +1288,33 @@
       <div class="review-list" id="reviewList">
         <div class="no-reviews">Tunggu</div>
       </div>
+      <button class="lokasi-button" style="margin-top:20px;" onclick="showReviewModal()">
+        <i class="fas fa-pen"></i> Tulis Ulasan
+      </button>
     </div>
-    
+    <div class="review-modal" id="reviewModal">
+      <div class="review-content">
+        <div class="review-header">
+          <h2>Tulis Ulasan</i></h2>
+          <button class="close-review" onclick="closeReviewModal()">&times;</button>
+        </div>
+        <form class="review-form" onsubmit="submitReview(event)">
+          <input type="text" id="reviewerName" placeholder="Nama Anda" required>
+          <div class="rating-stars" id="ratingStars">
+            <span class="star" data-rating="1">☆</span>
+            <span class="star" data-rating="2">☆</span>
+            <span class="star" data-rating="3">☆</span>
+            <span class="star" data-rating="4">☆</span>
+            <span class="star" data-rating="5">☆</span>
+          </div>
+          <textarea id="reviewText" placeholder="Bagaimana pengalaman Anda?" required></textarea>
+          <button type="submit" class="submit-review"><i class="fas fa-paper-plane"></i> Kirim Ulasan</button>
+        </form>
+      </div>
+    </div>
     <h2 class="section-title">
-      <span class="menu-label"><i class="fas fa-concierge-bell"></i> Pertanyaan</span>
+      <span class="menu-label"><i class="fas fa-comments"></i> Pertanyaan</span>
     </h2>
-      
     <div class="faq-container">
       <div class="faq-item" onclick="toggleFAQ(this)">
         <div class="faq-question">
@@ -1319,7 +1324,6 @@
           Kami buka dari jam 11 pagi sampai jam 8 malam setiap hari
         </div>
       </div>
-      
       <div class="faq-item" onclick="toggleFAQ(this)">
         <div class="faq-question">
           Berapa lama waktu pengiriman?
@@ -1328,7 +1332,6 @@
           Untuk wilayah Kebakkramat dan sekitarnya, pengiriman membutuhkan waktu 5-10 menit setelah pemesanan. Untuk daerah yang lebih jauh, waktu pengiriman disesuaikan dengan jarak.
         </div>
       </div>
-      
       <div class="faq-item" onclick="toggleFAQ(this)">
         <div class="faq-question">
           Bisa menerima pesanan?
@@ -1339,71 +1342,40 @@
       </div>
     </div>
   </div>
-  
   <div class="footer">
     <div class="content-wrapper">
       <h2>Pak Parno</h2>
       <p>Manjakan lidahmu dengan makanan yang sangat enak dan mengenyangkan dengan harga yang murah yaitu bakso kami</p>
-      
       <h2 style="margin-top: 16px;">Pemesanan</h2>
       <p>Menerima pesanan untuk daerah Kebakkramat dan sekitarnya dalam jumlah yang ditentukan.</p>
-      
       <h2 style="margin-top: 16px;">Hubungi</h2>
       <p>
         <i class="fas fa-phone"></i> 0813-8760-3153<br>
         <i class="fas fa-map-marker-alt"></i> JL. Mirukun, Banjarharjo, Kebakkramat
       </p>
-      
       <p style="font-size: 13px; text-align: center; margin-top: 20px;">© baksoviral | 2025</p>
     </div>
   </div>
-  
-  <div class="review-modal" id="reviewModal">
-    <div class="review-content">
-      <div class="review-header">
-        <h2>Tulis Ulasan</h2>
-        <button class="close-review" onclick="closeReviewModal()">&times;</button>
-      </div>
-      <form class="review-form" onsubmit="submitReview(event)">
-        <input type="text" id="reviewerName" placeholder="Nama Anda" required>
-        <div class="rating-stars" id="ratingStars">
-          <span class="star" data-rating="1">☆</span>
-          <span class="star" data-rating="2">☆</span>
-          <span class="star" data-rating="3">☆</span>
-          <span class="star" data-rating="4">☆</span>
-          <span class="star" data-rating="5">☆</span>
-        </div>
-        <textarea id="reviewText" placeholder="Bagaimana pengalaman Anda?" required></textarea>
-        <button type="submit" class="submit-review">Kirim Ulasan</button>
-      </form>
-    </div>
-  </div>
-  
   <div id="cartModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: var(--card-bg); width: 90%; max-width: 400px; border-radius: 10px; padding: 16px; max-height: 80vh; overflow-y: auto;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
         <h3 style="font-size: 18px;"><i class="fas fa-shopping-cart"></i> Keranjang</h3>
         <button onclick="closeCart()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text);">&times;</button>
       </div>
-      
       <div id="cartItems" style="margin-bottom: 16px;">
       </div>
-      
       <div style="border-top: 1px solid var(--border-color); padding-top: 10px; margin-bottom: 16px;">
         <div style="display: flex; justify-content: space-between; font-weight: bold;">
           <span>Total:</span>
           <span id="cartTotal">Rp0</span>
         </div>
       </div>
-      
       <div style="display: flex; justify-content: space-between;">
         <button onclick="closeCart()" style="padding: 8px 16px; border: 1px solid var(--border-color); background: none; border-radius: 4px; cursor: pointer;">Tutup</button>
         <button onclick="checkout()" style="padding: 8px 16px; background: var(--accent); color: white; border: none; border-radius: 4px; cursor: pointer;">Pesan via WhatsApp</button>
       </div>
     </div>
   </div>
-  
-  <!-- Modal Informasi -->
   <div class="info-modal" id="infoModal">
     <div class="info-modal-content">
       <button class="close-btn" onclick="closeInfoModal()">&times;</button>
@@ -1413,21 +1385,11 @@
     </h2>
       <h3>Website ini di tujukan sebagai pemermudah global untuk mengenal kami di media sosial, Kami hanya menggunakan website ini hanya untuk mengenalkan diri bukan untuk penjualan online seperti gofood dan sebagainya.</h3>
       <h2 class="section-title">
-      <span class="menu-label">Create By</span>
-    </h2>
-      <div class="tech-icons">
-        <i class="fab fa-html5"></i>
-        <i class="fab fa-css3-alt"></i>
-        <i class="fab fa-js"></i>
-        <i class="fas fa-database"></i>
-      </div>
       <p style="font-size: 12px; color: #777;">© baksoviral | 2025</p>
     </div>
   </div>
-  
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyDIOjpEtWakfh0WNCDC1iPj9Qm5zKDlaL4",
@@ -1438,57 +1400,45 @@
       messagingSenderId: "809521846306",
       appId: "1:809521846306:web:ee8bc0fe4e07584bad127b"
     };
-    
     firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
-    
     let userLocation = null;
     let cart = [];
     let selectedRating = 0;
-    
     if (localStorage.getItem('cart')) {
       cart = JSON.parse(localStorage.getItem('cart'));
       updateCartCount();
     }
-    
     loadReviews();
-    
     function toggleFAQ(element) {
       element.classList.toggle('active');
     }
-    
     function toggleToast() {
       const toast = document.getElementById('toastMenu');
       toast.style.display = toast.style.display === 'block' ? 'none' : 'block';
     }
-
     function toggleDarkMode() {
       document.body.classList.toggle('dark');
       document.getElementById('toastMenu').style.display = 'none';
       const isDark = document.body.classList.contains('dark');
       localStorage.setItem('darkMode', isDark);
     }
-    
     function showReviewModal() {
       document.getElementById('reviewModal').style.display = 'flex';
       document.getElementById('toastMenu').style.display = 'none';
       selectedRating = 0;
       updateStars();
     }
-    
     function closeReviewModal() {
       document.getElementById('reviewModal').style.display = 'none';
     }
-    
     function showInfoModal() {
       document.getElementById('infoModal').style.display = 'flex';
       document.getElementById('toastMenu').style.display = 'none';
     }
-    
     function closeInfoModal() {
       document.getElementById('infoModal').style.display = 'none';
     }
-    
     function updateStars() {
       const stars = document.querySelectorAll('#ratingStars .star');
       stars.forEach(star => {
@@ -1502,38 +1452,30 @@
         }
       });
     }
-    
     function setRating(rating) {
       selectedRating = rating;
       updateStars();
     }
-    
     function submitReview(event) {
       event.preventDefault();
-      
       const name = document.getElementById('reviewerName').value;
       const text = document.getElementById('reviewText').value;
-      
       if (selectedRating === 0) {
         alert('Silakan beri rating dengan bintang');
         return;
       }
-      
       if (!name || !text) {
         alert('Silakan isi semua kolom');
         return;
       }
-      
       const review = {
         name: name,
         rating: selectedRating,
         text: text,
         timestamp: new Date().toISOString()
       };
-      
       const reviewsRef = database.ref('Ulasan');
       const newReviewRef = reviewsRef.push();
-      
       newReviewRef.set(review)
         .then(() => {
           document.getElementById('reviewerName').value = '';
@@ -1549,52 +1491,42 @@
           showToast('Terjadi kesalahan. Silakan coba lagi.');
         });
     }
-    
     function loadReviews() {
       const reviewList = document.getElementById('reviewList');
       reviewList.innerHTML = '<div class="no-reviews">Memuat ulasan...</div>';
-      
       database.ref('Ulasan').once('value')
         .then(snapshot => {
           const reviews = [];
           let totalRating = 0;
           let reviewCount = 0;
-          
           snapshot.forEach(childSnapshot => {
             const review = childSnapshot.val();
             review.id = childSnapshot.key;
             reviews.push(review);
-            
             if (review.rating) {
               totalRating += review.rating;
               reviewCount++;
             }
           });
-          
           reviews.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-          
           if (reviewCount > 0) {
             const averageRating = (totalRating / reviewCount).toFixed(1);
             document.getElementById('averageRating').textContent = averageRating;
           }
-          
           if (reviews.length === 0) {
             reviewList.innerHTML = '<div class="no-reviews">Belum ada ulasan. Jadilah yang pertama!</div>';
           } else {
             reviewList.innerHTML = '';
             reviews.forEach((review, index) => {
               if (index >= 3) return;
-              
               const reviewDate = new Date(review.timestamp);
               const formattedDate = `${reviewDate.getDate()}/${reviewDate.getMonth()+1}/${reviewDate.getFullYear()}`;
-              
               let starsHtml = '';
               for (let i = 1; i <= 5; i++) {
                 starsHtml += i <= review.rating ? 
                   '<span class="star selected">★</span>' : 
                   '<span class="star">☆</span>';
               }
-              
               const reviewItem = document.createElement('div');
               reviewItem.className = 'review-item';
               reviewItem.innerHTML = `
@@ -1605,7 +1537,6 @@
                 <div class="review-stars">${starsHtml}</div>
                 <div class="review-text">${review.text}</div>
               `;
-              
               reviewList.appendChild(reviewItem);
             });
           }
@@ -1615,10 +1546,9 @@
           reviewList.innerHTML = '<div class="no-reviews">Gagal memuat ulasan. Silakan coba lagi nanti.</div>';
         });
     }
-    
     function showToast(message) {
       const toast = document.createElement('div');
-      toast.styleosition = 'fixed';
+      toast.style.position = 'fixed';
       toast.style.bottom = '20px';
       toast.style.left = '50%';
       toast.style.transform = 'translateX(-50%)';
@@ -1630,9 +1560,7 @@
       toast.style.zIndex = '1000';
       toast.style.transition = 'all 0.3s ease';
       toast.innerHTML = `<i class="fas fa-check" style="color:var(--success-color); margin-right:5px;"></i> ${message}`;
-      
       document.body.appendChild(toast);
-      
       setTimeout(() => {
         toast.style.opacity = '0';
         toast.style.bottom = '50px';
@@ -1641,15 +1569,12 @@
         }, 300);
       }, 2000);
     }
-    
     document.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark');
       }
       cekJamOperasional();
-      
       initGallery();
-      
       const stars = document.querySelectorAll('#ratingStars .star');
       stars.forEach(star => {
         star.addEventListener('click', () => {
@@ -1658,19 +1583,15 @@
         });
       });
     });
-
     function initGallery() {
       const slides = document.querySelectorAll('.slide');
       const dots = document.querySelectorAll('.dot');
       let currentSlide = 0;
-      
       showSlide(currentSlide);
-      
       setInterval(() => {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
       }, 3000);
-      
       dots.forEach(dot => {
         dot.addEventListener('click', function() {
           const index = parseInt(this.getAttribute('data-index'));
@@ -1679,36 +1600,28 @@
         });
       });
     }
-    
     function showSlide(index) {
       const slides = document.querySelectorAll('.slide');
       const dots = document.querySelectorAll('.dot');
-      
       slides.forEach(slide => {
         slide.classList.remove('fade');
       });
-      
       dots.forEach(dot => {
         dot.classList.remove('active');
       });
-      
       slides[index].classList.add('fade');
       dots[index].classList.add('active');
     }
-    
     function getLocation() {
       const locationText = document.getElementById('locationText');
       const loading = document.getElementById('locationLoading');
-      
       locationText.textContent = 'Mendeteksi lokasi';
       loading.style.display = 'inline-block';
-      
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(pos => {
           const lat1 = pos.coords.latitude;
           const lon1 = pos.coords.longitude;
           userLocation = { latitude: lat1, longitude: lon1 };
-          
           const lat2 = -7.5267286;
           const lon2 = 110.9400621;
           const R = 6371;
@@ -1717,12 +1630,10 @@
           const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)**2;
           const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
           const d = R * c;
-          
           document.getElementById("jarakView").innerHTML = `
             <div class="label">Berjarak Sekitar</div>
             <div><i class="fas fa-map-marker-alt" style="margin-right:4px;color:var(--accent);"></i> ${d.toFixed(2)} km</div>
           `;
-          
           locationText.textContent = 'Berhasil Mengukur Jarak';
           loading.style.display = 'none';
         }, () => {
@@ -1736,21 +1647,17 @@
         alert("Anda perlu menggunakan Chrome.");
       }
     }
-
     function cekJamOperasional() {
       const jam = new Date().getHours();
       const status = (jam >= 11 && jam < 20) ? 'Buka' : 'Tutup';
       const statusColor = (jam >= 11 && jam < 20) ? '#00aa5b' : '#e63946';
-      
       document.getElementById("jamStatus").innerHTML = `
         <div class="label">Saat Ini</div>
         <div><i class="fas fa-clock" style="color:${statusColor};"></i> ${status}</div>
       `;
     }
-    
     function addToCart(menuName, harga) {
       const existingItem = cart.find(item => item.name === menuName);
-      
       if (existingItem) {
         existingItem.quantity += 1;
       } else {
@@ -1760,44 +1667,36 @@
           quantity: 1
         });
       }
-      
       updateCartCount();
       saveCartToStorage();
       showToast('Berhasil Di Pilih');
     }
-    
     function updateCartCount() {
       const count = cart.reduce((total, item) => total + item.quantity, 0);
       document.getElementById('cartCount').textContent = count;
     }
-    
     function saveCartToStorage() {
       localStorage.setItem('cart', JSON.stringify(cart));
     }
-    
     function showCart(showCheckout = false) {
       const modal = document.getElementById('cartModal');
       const cartItems = document.getElementById('cartItems');
       const cartTotal = document.getElementById('cartTotal');
       cartItems.innerHTML = '';
-      
       if (cart.length === 0) {
         cartItems.innerHTML = '<p style="text-align:center; color:gray;">Masih Kosong Nih 🥲</p>';
         cartTotal.textContent = 'Rp0';
       } else {
         let total = 0;
-        
         cart.forEach((item, index) => {
           const itemTotal = item.price * item.quantity;
           total += itemTotal;
-          
           const itemElement = document.createElement('div');
           itemElement.style.display = 'flex';
           itemElement.style.justifyContent = 'space-between';
           itemElement.style.marginBottom = '10px';
           itemElement.style.paddingBottom = '10px';
           itemElement.style.borderBottom = '1px dashed var(--border-color)';
-          
           itemElement.innerHTML = `
             <div>
               <div style="font-weight:bold;">${item.name}</div>
@@ -1812,15 +1711,11 @@
               </button>
             </div>
           `;
-          
           cartItems.appendChild(itemElement);
         });
-        
         cartTotal.textContent = `Rp${total.toLocaleString('id-ID')}`;
       }
-      
       modal.style.display = 'flex';
-      
       if (showCheckout && cart.length > 0) {
         setTimeout(() => {
           const checkoutBtn = modal.querySelector('button[onclick="checkout()"]');
@@ -1828,14 +1723,11 @@
         }, 100);
       }
     }
-    
     function closeCart() {
       document.getElementById('cartModal').style.display = 'none';
     }
-    
     function updateQuantity(index, change) {
       const newQuantity = cart[index].quantity + change;
-      
       if (newQuantity <= 0) {
         removeItem(index);
       } else {
@@ -1845,35 +1737,27 @@
         showCart();
       }
     }
-    
     function removeItem(index) {
       cart.splice(index, 1);
       saveCartToStorage();
       updateCartCount();
       showCart();
     }
-    
     function checkout() {
       if (cart.length === 0) return;
-      
       const phoneNumber = '6281387603153';
       let message = `Halo Mas, saya mau pesan:\n`;
-      
       let total = 0;
       cart.forEach(item => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
         message += `${item.name} ${item.quantity}\n`;
       });
-      
       message += `\nHarganya : Rp${total.toLocaleString('id-ID')}\n\n`;
-      
       if (userLocation) {
         message += `Lokasi saya di sini:\nhttps://www.google.com/maps?q=${userLocation.latitude},${userLocation.longitude}\n\n`;
       }
-      
       message += `Terima kasih.`;
-      
       const encodedMessage = encodeURIComponent(message);
       window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
       cart = [];
